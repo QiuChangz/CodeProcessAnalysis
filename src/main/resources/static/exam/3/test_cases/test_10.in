@@ -1,0 +1,12 @@
+2
+4 FIFO
+IN 1
+OUT
+OUT
+IN 2
+5 FILO
+IN 1
+IN 2
+OUT
+IN 3
+OUT

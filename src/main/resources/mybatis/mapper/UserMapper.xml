@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.nju.qcz.mapper.UserMapper">
+    <select id="getUserInfo" resultType="String">
+        select distinct user_id
+        from summary_info
+        where exam_id = #{examId}
+    </select>
+
+    <select id="getExamInfo" resultType="String">
+        select distinct exam_id from summary_info
+    </select>
+
+    <select id="getSummaryInfo" resultType="cn.edu.nju.qcz.entity.Summary">
+        select * from summary_info where user_id = #{userId} and exam_id = #{examId} order by time desc
+    </select>
+
+    <select id="getCodeTime" resultType="String">
+        select time from summary_info where user_id = #{userId} and exam_id = #{examId}
+    </select>
+
+    <select id="getTestUsersNum" resultType="cn.edu.nju.qcz.entity.Exam">
+        select exam_id, count(distinct user_id) from summary_info group by exam_id
+    </select>
+
+    <select id="getExamTimes" resultType="Integer">
+        select count(distinct exam_id) from summary_info where user_id = #{userId}
+    </select>
+</mapper>

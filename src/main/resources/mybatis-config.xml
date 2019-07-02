@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局性地启用或禁用所有在mapper配置文件中配置的缓存，默认：true -->
+        <setting name="cacheEnabled" value="false"/>
+
+        <!-- 自动将数据库字段和java属性之间驼峰映射(包括嵌套嵌套的属性) -->
+        <setting name="autoMappingBehavior" value="FULL"/>
+
+        <!-- 全局性地启用或禁用延迟加载（当禁用时，所有关联的配置都会立即加载 ），默认：true -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+
+        <!-- 允许或禁止从单一的语句返回多个结果 multipleResultSetsEnabled集（需要驱动程序兼容），默认：true -->
+        <setting name="multipleResultSetsEnabled" value="true"/>
+
+        <!-- 使用列的标签而不是列的名称，默认：true -->
+        <setting name="useColumnLabel" value="true"/>
+
+        <!-- 配置默认的执行器，默认：SIMPLE -->
+        <!-- SIMPLE：简单的执行器 -->
+        <!-- REUSE：重用 prepared statements的执行器 -->
+        <!-- BATCH：重用 statements并且进行批量更新的执行器 -->
+        <setting name="defaultExecutorType" value="REUSE"/>
+
+        <!-- 设置查询数据库超时时间，默认：Not Set(null) -->
+        <setting name="defaultStatementTimeout" value="25000"/>
+
+        <!-- 设置在查询结果遇到有下划线的命名时时，是否自动转化为驼峰式命名，默认：false -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+        <!--用Map作为返回类型时,默认空值的列是不返回的-->
+        <setting name="callSettersOnNulls" value="true"/>
+
+        <setting name="jdbcTypeForNull" value="NULL" />
+
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--<setting name="logImpl" value="SLF4J" />-->
+    </settings>
+</configuration>
